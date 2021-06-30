@@ -1,0 +1,42 @@
+version: "3"
+services:
+  reverseproxy:
+      image: newtonlaw18/reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backend-user
+        - backend-feed
+  backend-user:
+    image: newtonlaw18/udacity-api-user
+    volumes:
+      - /usr/bin/aws
+    environment:
+      POSTGRESS_USERNAME: newton
+      POSTGRESS_PASSWORD: 12345678
+      POSTGRESS_DATABASE: udagram
+      POSTGRESS_HOST: udagram.cbd1h54qan9h.us-east-2.rds.amazonaws.com
+      AWS_REGION: us-east-2
+      AWS_PROFILE: default
+      AWS_MEDIA_BUCKET: udagram-ms-project-bucket-dev
+      JWT_SECRET: hello
+      URL: "http://localhost:8100"
+  backend-feed:
+    image: newtonlaw18/udacity-api-feed
+    volumes:
+      - /usr/bin/aws
+    environment:
+      POSTGRESS_USERNAME: newton
+      POSTGRESS_PASSWORD: 12345678
+      POSTGRESS_DATABASE: udagram
+      POSTGRESS_HOST: udagram.cbd1h54qan9h.us-east-2.rds.amazonaws.com
+      AWS_REGION: us-east-2
+      AWS_PROFILE: default
+      AWS_MEDIA_BUCKET: udagram-ms-project-bucket-dev
+      JWT_SECRET: hello
+      URL: "http://localhost:8100"
+  frontend:
+    image: newtonlaw18/udacity-frontend:prod
+    ports:
+      - "8100:80"
