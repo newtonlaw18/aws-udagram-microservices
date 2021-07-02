@@ -33,8 +33,10 @@ router.get('/', async (req: Request, res: Response) => {
     items.rows.map((item) => {
             if(item.url) {
                 item.url = AWS.getGetSignedUrl(item.url);
+                console.log(new Date().toLocaleString() + `: feed item ${item.url} requested`)
             }
     });
+    
     res.send(items);
 });
 

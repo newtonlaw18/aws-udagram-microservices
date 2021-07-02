@@ -14,7 +14,7 @@ services:
       - /usr/bin/aws
     environment:
       POSTGRESS_USERNAME: newton
-      POSTGRESS_PASSWORD: 12345678
+      POSTGRESS_PASSWORD: '12345678'
       POSTGRESS_DATABASE: udagram
       POSTGRESS_HOST: udagram.cbd1h54qan9h.us-east-2.rds.amazonaws.com
       AWS_REGION: us-east-2
@@ -28,7 +28,7 @@ services:
       - /usr/bin/aws
     environment:
       POSTGRESS_USERNAME: newton
-      POSTGRESS_PASSWORD: 12345678
+      POSTGRESS_PASSWORD: '12345678'
       POSTGRESS_DATABASE: udagram
       POSTGRESS_HOST: udagram.cbd1h54qan9h.us-east-2.rds.amazonaws.com
       AWS_REGION: us-east-2
