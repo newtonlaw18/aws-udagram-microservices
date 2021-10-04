@@ -18,7 +18,6 @@ Please make sure the following applications are installed in the system.
 - Set up Amazon S3
 - Set up RDS
 - Set up Kubernetes Cluster and Node Group in AWS EKS
-- Set up Reverse Proxy
 
 ### Database
 Create a PostgreSQL database either locally or on AWS RDS. Set the config values for environment variables prefixed with `POSTGRES_` in `set_env.sh`.
