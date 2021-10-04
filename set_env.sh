@@ -1,5 +1,6 @@
 # This file is used for convenience of local development.
 # DO NOT STORE YOUR CREDENTIALS INTO GIT
+# These are test credentials and not production credentials
 export POSTGRES_USERNAME=newton
 export POSTGRES_PASSWORD=12345678
 export POSTGRES_HOST=udagram.cbd1h54qan9h.us-east-2.rds.amazonaws.com
